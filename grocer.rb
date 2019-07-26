@@ -16,7 +16,7 @@ def apply_coupons(cart, coupons)
       if cart[coupon[:item]][:count] >= coupon[:num] #If we have a couponed item, it is greater than or equal to the amount needed for the coupon
         itemwithCoupon = "#{coupon[:item]} W/COUPON" #If it meets the requirements, a new hash is created for the item and is assigned to a variable to make life easier
         if cart[itemwithCoupon] #If our cart has an item meeting coupon requirements
-          cart[itemwithCoupon][:count] += coupon[:num]
+          cart[itemwithCoupon][:count] += coupon[:num] #Updates the amount 
           cart[coupon[:item]][:count] -= coupon[:num]
         else
           cart[itemwithCoupon] = {}
