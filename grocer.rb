@@ -15,7 +15,7 @@ def apply_coupons(cart, coupons)
     if cart.keys.include?(coupon[:item]) #Checks to see if our cart includes a couponed item
       if cart[coupon[:item]][:count] >= coupon[:num] #If we have a couponed item, it is greater than or equal to the amount needed for the coupon
         itemwithCoupon = "#{coupon[:item]} W/COUPON" #If it meets the requirements, a new hash is created for the item and is assigned to a variable to make life easier
-        if cart[itemwithCoupon] 
+        if cart[itemwithCoupon]
           cart[itemwithCoupon][:count] += coupon[:num]
           cart[coupon[:item]][:count] -= coupon[:num]
         else
